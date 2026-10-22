@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123c35">
+<meta name="theme-color" content="#123c35"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ujian TKA">
 <title>TKA Akuntansi dan Keuangan Lembaga (Paket 2) | SMK Ma'arif 1 Semaka</title>
 <style>
 :root{--green:#123c35;--green2:#1e6557;--mint:#e8f4ef;--gold:#e8b84a;--ink:#172522;--muted:#667570;--line:#dce5e0;--paper:#fff;--bg:#f3f7f5;--red:#b83a3a;--blue:#2463a6}
@@ -13,7 +13,7 @@ table.sales-journal{min-width:1100px}table.sales-journal th{white-space:nowrap;t
 .pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:7px;margin:8px 0}.pal button{padding:10px 0;border-radius:10px;border:1.5px solid #cdd9d3;background:#fff;color:#33463f;font-weight:700;font-size:14px;cursor:pointer}.pal button.on,.pal button.ok{background:#1f7a57;border-color:#1f7a57;color:#fff}.pal button.pt{background:#e3a72f;border-color:#e3a72f;color:#fff}.pal button.bad{background:#c9524a;border-color:#c9524a;color:#fff}.pal button.cur{box-shadow:0 0 0 3px #123c35;border-color:#123c35}.leg{font-size:12.5px;color:#4d6b5f;margin:4px 0 10px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}.lg{display:inline-block;width:14px;height:14px;border-radius:4px;border:1.5px solid #cdd9d3;background:#fff;vertical-align:-2px;margin-right:3px}.lg.on,.lg.ok{background:#1f7a57;border-color:#1f7a57}.lg.pt{background:#e3a72f;border-color:#e3a72f}.lg.bad{background:#c9524a;border-color:#c9524a}.lg.cur{box-shadow:0 0 0 2px #123c35;border-color:#123c35}</style></head><body>
 <div id="loginScreen" class="login"><div class="brand" style="color:var(--green);margin-bottom:20px"><div class="logo">SM</div><div><h1>SMK Ma'arif 1 Semaka</h1><p style="color:var(--muted)">Penilaian Akuntansi dan Keuangan Lembaga</p></div></div>
 <span class="tag" style="background:#fff1cf;color:#70541a">PENGAMBILAN NILAI</span><h2 style="margin-top:14px">TKA Akuntansi dan Keuangan Lembaga (Paket 2)</h2><p>50 soal · PG, PGK MCMA, dan PGK Kategori.</p>
-<div class="rules"><b>Sebelum mulai</b><ul><li>Soal tampil satu per satu; pakai nomor di bagian bawah untuk loncat ke soal lain. Jawaban tersimpan otomatis.</li><li>MCMA: pilih semua pernyataan yang benar. Kategori: tentukan Benar/Salah tiap pernyataan.</li><li>Nilai 0–100 dan pembahasan muncul setelah menekan <b>Kumpulkan</b>.</li><li>Setelah dikumpulkan, jawaban tidak dapat diubah.</li><li>Isi nama sesuai absen, karena nilai tercatat atas nama ini.</li></ul></div>
+<div class="rules"><b>Sebelum mulai</b><ul><li>Soal tampil satu per satu; pakai nomor di bagian bawah untuk loncat ke soal lain. Jawaban tersimpan otomatis.</li><li>MCMA: pilih semua pernyataan yang benar. Kategori: tentukan Benar/Salah tiap pernyataan.</li><li>Nilai 0–100 dan pembahasan muncul setelah menekan <b>Kumpulkan</b>.</li><li>Setelah dikumpulkan, jawaban tidak dapat diubah.</li><li>Isi nama sesuai absen, karena nilai tercatat atas nama ini.</li><li><b>Mode ujian aman:</b> ujian berjalan layar penuh. Keluar dari layar, pindah tab/aplikasi, atau membuka jendela lain akan mengunci layar dan dicatat. Pelanggaran ke-3 mengumpulkan jawaban secara otomatis.</li></ul></div>
 <div class="field"><label for="studentName">Nama lengkap</label><input id="studentName" placeholder="Contoh: Siti Nurhaliza" autocomplete="name"></div>
 <div class="field"><label for="studentClass">Kelas</label><select id="studentClass"><option value="">Pilih kelas</option><option>X AK</option><option>XI AK</option><option>XII AK</option></select></div>
 <button class="btn primary" onclick="login()" style="width:100%;padding:12px;margin-top:5px">Mulai mengerjakan →</button>
@@ -72,7 +72,7 @@ if(q.t==="PG")answers[n]=t.value;else if(q.t==="MC"){const s=new Set(answers[n]|
 save();renderNav();renderHd();document.getElementById("palQ").outerHTML=palQ();document.getElementById("cnt").textContent=Q.filter(done).length};
 if(submitted&&view==="q")b.querySelectorAll("input").forEach(e=>e.disabled=true);document.querySelector(".panel").scrollIntoView({block:"start"})}
 function renderResult(){if(!RES)return `<div class="empty">Kumpulkan jawaban untuk melihat nilai dan pembahasan.</div>`;const R=RES;
-return `<div class="scorebox"><h3>Nilai akhir: <span style="font-size:34px">${fmt(R.nilai)}</span> / 100</h3><p>${esc(student.name)} · ${esc(student.cls)}<br>Benar penuh: <b>${R.full}</b> · Sebagian: <b>${R.part}</b> · Salah: <b>${R.zero}</b> dari ${Q.length} soal${R.blank?` · Belum dijawab: <b>${R.blank}</b>`:""}<br><small>PG: 1 poin. MCMA: (pilihan benar − pilihan salah) ÷ jumlah kunci. Kategori: tiap pernyataan benar = 1/3 poin.</small></p><div class="toolbar"><button class="btn gold" onclick="downloadPDF()">⬇ Unduh PDF</button><button class="btn" onclick="downloadTXT()">Unduh TXT</button></div></div>
+return `<div class="scorebox"><h3>Nilai akhir: <span style="font-size:34px">${fmt(R.nilai)}</span> / 100</h3><p>${esc(student.name)} · ${esc(student.cls)}<br>Benar penuh: <b>${R.full}</b> · Sebagian: <b>${R.part}</b> · Salah: <b>${R.zero}</b> dari ${Q.length} soal${R.blank?` · Belum dijawab: <b>${R.blank}</b>`:""}${(answers.__viol?`<br>Pelanggaran layar: <b>${answers.__viol}</b> kali${answers.__auto==="1"?" (dikumpulkan otomatis)":""}`:"")}<br><small>PG: 1 poin. MCMA: (pilihan benar − pilihan salah) ÷ jumlah kunci. Kategori: tiap pernyataan benar = 1/3 poin.</small></p><div class="toolbar"><button class="btn gold" onclick="downloadPDF()">⬇ Unduh PDF</button><button class="btn" onclick="downloadTXT()">Unduh TXT</button></div></div>
 <div class="section-title">Pembahasan per soal</div>${pal(i=>"jumpTo('r"+Q[i].no+"')",(q,i)=>R.sc[i]>=.999?"ok":R.sc[i]>0?"pt":"bad")}<div class="leg"><span class="lg ok"></span> Benar <span class="lg pt"></span> Sebagian <span class="lg bad"></span> Salah</div>
 ${Q.map((q,i)=>{const s=R.sc[i];return `<details class="step-box" id="r${q.no}" ${s<.999?"open":""}><summary><b>Soal ${q.no}</b> · ${TL[q.t]} <span class="tag">${s>=.999?"✓ Benar":s>0?"◐ Sebagian ("+fmt(s)+")":"✗ Salah"}</span></summary>${rev(q,answers[q.no],true)}</details>`}).join("")}`}
 function renderKey(){if(!keyOpen)return `<div class="notice">Bagian ini khusus guru. Masukkan password untuk membuka kunci jawaban.</div><div class="key-lock"><input id="keyPass" type="password" autocomplete="off" placeholder="Password" onkeydown="if(event.key==='Enter')unlockKey()"><button class="btn primary" onclick="unlockKey()">Buka kunci jawaban</button><p id="keyErr" class="key-err"></p></div>`;
@@ -88,7 +88,7 @@ if(!confirm((bl?"Masih ada "+bl+" soal yang belum dijawab lengkap. ":"")+"Kumpul
 RES=grade();submitted=true;answers.__submitted="1";answers.__nilai=String(RES.nilai);save();document.body.classList.add("done");go("hasil");
 const f=new Date().toISOString(),payload={latihan:"TKA Akuntansi dan Keuangan Lembaga (Paket 2)",name:student.name,className:student.cls,number:"",startedAt:startedAt,finishedAt:f,score:RES.nilai,correct:RES.full,wrong:Q.length-RES.full,answers:JSON.stringify({student:student,answers:answers,nilai:RES.nilai,perSoal:RES.sc})};
 if(GOOGLE_SCRIPT_URL){try{await fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)})}catch(e){alert("Pengiriman ke Apps Script gagal. Nilai tetap tersimpan di perangkat ini; unduh PDF/TXT sebagai cadangan.")}}}
-function downloadTXT(){if(!RES)RES=grade();const R=RES,l=["HASIL TKA AKUNTANSI DAN KEUANGAN LEMBAGA (PAKET 2)","Nama  : "+student.name,"Kelas : "+student.cls,"Waktu : "+new Date().toLocaleString("id-ID"),"Status: "+(submitted?"Sudah dikumpulkan":"Belum dikumpulkan"),"NILAI : "+R.nilai+" / 100","Benar penuh: "+R.full+" | Sebagian: "+R.part+" | Salah: "+R.zero,"","","DATA JAWABAN (jangan diubah)",JSON.stringify({student:student,answers:answers})];const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([l.join("\n")],{type:"text/plain;charset=utf-8"}));a.download="hasil_"+(student.name+"_"+student.cls).replace(/[^A-Za-z0-9]+/g,"_")+"_paket2.txt";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function downloadTXT(){if(!RES)RES=grade();const R=RES,l=["HASIL TKA AKUNTANSI DAN KEUANGAN LEMBAGA (PAKET 2)","Nama  : "+student.name,"Kelas : "+student.cls,"Waktu : "+new Date().toLocaleString("id-ID"),"Status: "+(submitted?"Sudah dikumpulkan":"Belum dikumpulkan"),"NILAI : "+R.nilai+" / 100","Pelanggaran layar: "+(answers.__viol||0)+" kali"+(answers.__auto==="1"?" (dikumpulkan otomatis)":"")+((answers.__log&&answers.__log.length)?" | "+answers.__log.join("; "):""),"Benar penuh: "+R.full+" | Sebagian: "+R.part+" | Salah: "+R.zero,"","","DATA JAWABAN (jangan diubah)",JSON.stringify({student:student,answers:answers})];const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([l.join("\n")],{type:"text/plain;charset=utf-8"}));a.download="hasil_"+(student.name+"_"+student.cls).replace(/[^A-Za-z0-9]+/g,"_")+"_paket2.txt";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 function downloadPDF(){if(!RES)RES=grade();if(!window.jspdf){alert("Pustaka PDF belum termuat. Periksa koneksi internet.");return}
 const doc=new window.jspdf.jsPDF({unit:"mm",format:"a4"}),W=210,M=16,R=RES,GR=[30,110,70],RD=[184,58,58];let y=20;
 const cl=s=>String(s).replace(/→/g,"->").replace(/[\u2013\u2014\u2212]/g,"-").replace(/[^\x20-\x7E\u00A0-\u00FF]/g,"");
@@ -96,12 +96,164 @@ const pg=n=>{if(y+n>285){doc.addPage();y=18}};
 const P=(t,o)=>{o=o||{};doc.setFont("helvetica",o.b?"bold":"normal");doc.setFontSize(o.s||9);const c=o.c||[23,37,34];doc.setTextColor(c[0],c[1],c[2]);doc.splitTextToSize(cl(t),W-2*M-(o.i||0)).forEach(l=>{pg(5);doc.text(l,M+(o.i||0),y);y+=4.3});y+=o.g||0};
 const S=t=>{pg(14);doc.setFillColor(232,244,239);doc.rect(M,y,W-2*M,7,"F");doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(18,60,53);doc.text(cl(t),M+2,y+5);y+=11};
 doc.setFillColor(18,60,53);doc.rect(0,0,W,30,"F");doc.setTextColor(255,255,255);doc.setFont("helvetica","bold");doc.setFontSize(14);doc.text("LAPORAN HASIL TKA AKUNTANSI DAN KEUANGAN LEMBAGA",M,13);doc.setFont("helvetica","normal");doc.setFontSize(10);doc.text("SMK Ma'arif 1 Semaka - Pengambilan Nilai - Paket 2",M,21);y=40;
-S("A. IDENTITAS SISWA");P("Nama: "+student.name);P("Kelas: "+student.cls);P("Waktu: "+new Date().toLocaleString("id-ID")+" ("+(submitted?"sudah dikumpulkan":"BELUM dikumpulkan")+")",{g:3});
+S("A. IDENTITAS SISWA");P("Nama: "+student.name);P("Kelas: "+student.cls);P("Pelanggaran layar: "+(answers.__viol||0)+" kali"+(answers.__auto==="1"?" - dikumpulkan otomatis":"")+((answers.__log&&answers.__log.length)?" ("+answers.__log.join("; ")+")":""));P("Waktu: "+new Date().toLocaleString("id-ID")+" ("+(submitted?"sudah dikumpulkan":"BELUM dikumpulkan")+")",{g:3});
 S("B. RINGKASAN");P("NILAI AKHIR: "+fmt(R.nilai)+" / 100",{b:1,s:12,g:1});P("Benar penuh: "+R.full+" | Sebagian: "+R.part+" | Salah: "+R.zero+" | Belum dijawab: "+R.blank+" (dari "+Q.length+" soal)",{g:3});
 
 S("C. REKAP PER SOAL");const rw=Math.ceil(Q.length/5);pg(rw*5+4);Q.forEach((q,i)=>{const s=R.sc[i],c=s>=.999?GR:s>0?[160,110,20]:RD;doc.setFont("helvetica","bold");doc.setFontSize(8.5);doc.setTextColor(c[0],c[1],c[2]);doc.text("No "+q.no+": "+(s>=.999?"Benar":s>0?"Sebagian":"Salah"),M+(i%5)*36,y+Math.floor(i/5)*5)});y+=rw*5+5;
 S("D. PEMBAHASAN SOAL YANG BELUM BENAR");const w=Q.filter((q,i)=>R.sc[i]<.999);if(!w.length)P("Semua soal dijawab benar.",{c:GR});
 w.forEach(q=>{pg(32);P("Soal "+q.no+" ("+TL[q.t]+") - skor "+fmt(R.sc[q.no-1])+" dari 1",{b:1,s:9.5,c:RD});P(q.stim.replace(/\n/g," "),{c:[90,105,98],i:3});P("Jawabanmu: "+ansTxt(q,answers[q.no]),{i:3,c:RD});P("Jawaban benar: "+keyTxt(q),{i:3,c:GR});P("Pembahasan: "+q.pem,{i:3,g:3})});
 doc.save("hasil_"+(student.name+"_"+student.cls).replace(/[^A-Za-z0-9]+/g,"_")+"_paket2.pdf")}
+
+
+/* ===== MODE UJIAN AMAN: layar penuh + deteksi keluar + kunci layar =====
+   Pengaturan guru: ubah angka di baris berikut.
+   GUARD_ON      : true = mode aman aktif, false = nonaktif
+   MAX_VIOLATION : jumlah pelanggaran sebelum jawaban dikumpulkan otomatis
+   LOCK_SECONDS  : lama tombol "Kembali ke ujian" tertahan setelah terkunci          */
+(function(){
+const GUARD_ON=true,MAX_VIOLATION=3,LOCK_SECONDS=5,GRACE_MS=2000;
+if(!GUARD_ON)return;
+let active=false,locked=false,ended=false,built=false,hooked=false,pushed=false,lockedAt=0,lastEv=0,ignoreUntil=0,busy=0,wasFs=false,wl=null,timer=null;
+const root=document.documentElement,$=id=>document.getElementById(id);
+const UA=navigator.userAgent||"",isIOS=/iPad|iPhone|iPod/.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const fsSupported=!!(root.requestFullscreen||root.webkitRequestFullscreen)&&document.fullscreenEnabled!==false&&document.webkitFullscreenEnabled!==false;
+let vid=null;
+const isFs=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+const clock=()=>new Date().toLocaleTimeString("id-ID");
+const _login=login,_submit=submitAll;
+
+function build(){
+ if(built)return;built=true;
+ const st=document.createElement("style");
+ st.textContent="#gdOverlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:#0f2e2a;color:#fff;display:none;align-items:center;justify-content:center;padding:22px;text-align:center;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}#gdOverlay.on{display:flex}.gd-box{max-width:430px;width:100%}.gd-ic{font-size:54px;line-height:1}.gd-box h2{margin:12px 0 8px;font-size:23px}.gd-box p{margin:6px 0;line-height:1.5;color:#d7e7e2;font-size:14.5px}#gdBack{margin-top:16px;width:100%;padding:13px;border:0;border-radius:12px;background:#e6b84a;color:#2b2208;font-weight:700;font-size:15px}#gdBack:disabled{opacity:.55}.gd-t{margin-top:18px;font-size:12.5px;color:#9fb9b2}.gd-t summary{cursor:pointer}.gd-t input{margin-top:8px;padding:9px;border-radius:8px;border:0;width:62%}.gd-t button{margin-left:6px;padding:9px 12px;border:0;border-radius:8px;font-weight:700}#gdErr{margin-top:6px;color:#ffb4b4}#gdBadge{position:fixed;left:10px;bottom:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:9000;background:#123c35;color:#fff;font:600 11px system-ui,sans-serif;padding:6px 11px;border-radius:999px;display:none;opacity:.92}.gd-ios{margin-top:10px;padding:10px 12px;border-radius:10px;background:#fff6dc;color:#5a4300;font-size:12.5px;line-height:1.55;text-align:left}@supports (-webkit-touch-callout:none){input,select,textarea{font-size:16px!important}}body.gd-on{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}body.gd-on input,body.gd-on select{-webkit-user-select:text;user-select:text}";
+ document.head.appendChild(st);
+ const ov=document.createElement("div");ov.id="gdOverlay";
+ ov.innerHTML='<div class="gd-box"><div class="gd-ic">🔒</div><h2 id="gdTitle"></h2><p id="gdWhy"></p><p id="gdCnt"></p><button id="gdBack" type="button"></button><details class="gd-t" id="gdTeacher"><summary>Guru: buka kunci</summary><input id="gdPass" type="password" placeholder="Password guru"><button id="gdUnlock" type="button">Buka</button><div id="gdErr"></div></details></div>';
+ document.body.appendChild(ov);
+ const bd=document.createElement("div");bd.id="gdBadge";document.body.appendChild(bd);
+ $("gdBack").addEventListener("click",back);
+ $("gdUnlock").addEventListener("click",teacherUnlock);
+}
+function updBadge(){const b=$("gdBadge");if(b)b.textContent="🔒 Mode ujian · pelanggaran "+(answers.__viol||0)+"/"+MAX_VIOLATION+(fsSupported?"":" · pantauan pindah aplikasi aktif")}
+async function enterFs(){
+ try{if(root.requestFullscreen)await root.requestFullscreen({navigationUI:"hide"});else if(root.webkitRequestFullscreen)root.webkitRequestFullscreen()}catch(e){}
+ try{if(navigator.keyboard&&navigator.keyboard.lock)await navigator.keyboard.lock(["Escape"])}catch(e){}
+}
+function playNoSleep(){
+ try{
+  if(!vid){vid=document.createElement("video");vid.setAttribute("playsinline","");vid.setAttribute("muted","");vid.setAttribute("loop","");vid.muted=true;vid.loop=true;
+   vid.style.cssText="position:fixed;left:0;top:0;width:1px;height:1px;opacity:.01;pointer-events:none";
+   vid.src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAM4bW9vdgAAAGxtdmhkAAAAAAAAAAAAAAAAAAAD6AAAA+gAAQAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAmJ0cmFrAAAAXHRraGQAAAADAAAAAAAAAAAAAAABAAAAAAAAA+gAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAEAAAABAAAAAAAAkZWR0cwAAABxlbHN0AAAAAAAAAAEAAAPoAAAAAAABAAAAAAHabWRpYQAAACBtZGhkAAAAAAAAAAAAAAAAAAAoAAAAKABVxAAAAAAALWhkbHIAAAAAAAAAAHZpZGUAAAAAAAAAAAAAAABWaWRlb0hhbmRsZXIAAAABhW1pbmYAAAAUdm1oZAAAAAEAAAAAAAAAAAAAACRkaW5mAAAAHGRyZWYAAAAAAAAAAQAAAAx1cmwgAAAAAQAAAUVzdGJsAAAAuXN0c2QAAAAAAAAAAQAAAKlhdmMxAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEAAQABIAAAASAAAAAAAAAABFUxhdmM2MC4zMS4xMDIgbGlieDI2NAAAAAAAAAAAAAAAGP//AAAAL2F2Y0MBQsAK/+EAF2dCwArZBCbARAAAAwAEAAADACg8SJkgAQAFaMuDyyAAAAAQcGFzcAAAAAEAAAABAAAAFGJ0cnQAAAAAAAAVwAAAFcAAAAAYc3R0cwAAAAAAAAABAAAABQAACAAAAAAUc3RzcwAAAAAAAAABAAAAAQAAABxzdHNjAAAAAAAAAAEAAAABAAAABQAAAAEAAAAoc3RzegAAAAAAAAAAAAAABQAAAo8AAAAKAAAACwAAAAoAAAAKAAAAFHN0Y28AAAAAAAAAAQAAA2gAAABidWR0YQAAAFptZXRhAAAAAAAAACFoZGxyAAAAAAAAAABtZGlyYXBwbAAAAAAAAAAAAAAAAC1pbHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjYwLjE2LjEwMAAAAAhmcmVlAAACwG1kYXQAAAJwBgX//2zcRem95tlIt5Ys2CDZI+7veDI2NCAtIGNvcmUgMTY0IHIzMTA4IDMxZTE5ZjkgLSBILjI2NC9NUEVHLTQgQVZDIGNvZGVjIC0gQ29weWxlZnQgMjAwMy0yMDIzIC0gaHR0cDovL3d3dy52aWRlb2xhbi5vcmcveDI2NC5odG1sIC0gb3B0aW9uczogY2FiYWM9MCByZWY9MyBkZWJsb2NrPTE6MDowIGFuYWx5c2U9MHgxOjB4MTExIG1lPWhleCBzdWJtZT03IHBzeT0xIHBzeV9yZD0xLjAwOjAuMDAgbWl4ZWRfcmVmPTEgbWVfcmFuZ2U9MTYgY2hyb21hX21lPTEgdHJlbGxpcz0xIDh4OGRjdD0wIGNxbT0wIGRlYWR6b25lPTIxLDExIGZhc3RfcHNraXA9MSBjaHJvbWFfcXBfb2Zmc2V0PS0yIHRocmVhZHM9MSBsb29rYWhlYWRfdGhyZWFkcz0xIHNsaWNlZF90aHJlYWRzPTAgbnI9MCBkZWNpbWF0ZT0xIGludGVybGFjZWQ9MCBibHVyYXlfY29tcGF0PTAgY29uc3RyYWluZWRfaW50cmE9MCBiZnJhbWVzPTAgd2VpZ2h0cD0wIGtleWludD0yNTAga2V5aW50X21pbj01IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAAAF2WIhAR8mKAANiMnJyddddddddddddeAAAAABkGaOAj4RgAAAAdBmlQCPhGAAAAABkGaYBDwjAAAAAZBmoA/wjA=";document.body.appendChild(vid)}
+  const p=vid.play();if(p&&p.catch)p.catch(function(){});
+ }catch(e){}
+}
+function keepAwake(){
+ try{
+  if(navigator.wakeLock&&navigator.wakeLock.request){
+   if(wl)return;
+   navigator.wakeLock.request("screen").then(function(l){wl=l;if(l&&l.addEventListener)l.addEventListener("release",function(){wl=null})}).catch(function(){playNoSleep()});
+  }else playNoSleep();
+ }catch(e){playNoSleep()}
+}
+function tick(){const left=Math.max(0,Math.ceil((lockedAt+LOCK_SECONDS*1000-Date.now())/1000)),b=$("gdBack");if(ended)return;b.disabled=left>0;b.textContent=left>0?"Kembali ke ujian ("+left+")":"Kembali ke ujian"}
+function lock(why){
+ locked=true;lockedAt=Date.now();
+ $("gdTitle").textContent="Layar ujian terkunci";
+ $("gdWhy").textContent="Terdeteksi: "+why+".";
+ $("gdCnt").textContent="Pelanggaran "+answers.__viol+" dari "+MAX_VIOLATION+". Pada pelanggaran ke-"+MAX_VIOLATION+", jawaban dikumpulkan otomatis.";
+ $("gdTeacher").style.display="";
+ $("gdOverlay").classList.add("on");tick();
+ clearInterval(timer);timer=setInterval(tick,500);
+}
+function unlock(){locked=false;clearInterval(timer);$("gdOverlay").classList.remove("on");ignoreUntil=Date.now()+1500;lastEv=Date.now();enterFs()}
+function back(){
+ if(ended){$("gdOverlay").classList.remove("on");return}
+ if(Date.now()<lockedAt+LOCK_SECONDS*1000)return;
+ unlock();
+}
+function teacherUnlock(){
+ const pw=$("gdPass").value.trim(),er=$("gdErr");
+ if(!pw){er.textContent="Masukkan password guru.";return}
+ if(cyrb(pw,11)!==KEY_HASH){er.textContent="Password salah.";return}
+ er.textContent="";$("gdPass").value="";
+ answers.__viol=Math.max(0,(answers.__viol||0)-1);
+ (answers.__log=answers.__log||[]).push(clock()+" kunci dibuka oleh guru");
+ save();updBadge();unlock();
+}
+function showEnd(){
+ ended=true;clearInterval(timer);
+ $("gdTitle").textContent="Ujian dikumpulkan otomatis";
+ $("gdWhy").textContent="Pelanggaran aturan ujian mencapai "+MAX_VIOLATION+" kali, sehingga jawaban Anda dikumpulkan otomatis.";
+ $("gdCnt").textContent="Nilai dan pembahasan dapat dilihat setelah menutup pesan ini.";
+ $("gdTeacher").style.display="none";
+ const b=$("gdBack");b.disabled=false;b.textContent="Lihat hasil";
+ $("gdOverlay").classList.add("on");examEnd();
+}
+async function autoSubmit(){
+ locked=true;answers.__auto="1";save();
+ const oc=window.confirm;window.confirm=()=>true;
+ try{await _submit()}catch(e){}finally{window.confirm=oc}
+ showEnd();
+}
+function violate(why,force){
+ if(!active||submitted||locked)return;
+ const now=Date.now();
+ if(!force&&(busy||now<ignoreUntil||now-lastEv<GRACE_MS))return;
+ lastEv=now;
+ answers.__viol=(answers.__viol||0)+1;
+ (answers.__log=answers.__log||[]).push(clock()+" "+why);
+ save();updBadge();
+ if(answers.__viol>=MAX_VIOLATION)autoSubmit();else lock(why);
+}
+function hookDialogs(){
+ if(hooked)return;hooked=true;
+ ["confirm","alert","prompt"].forEach(n=>{const o=window[n];if(typeof o!=="function")return;window[n]=function(){busy++;try{return o.apply(window,arguments)}finally{busy--;ignoreUntil=Date.now()+1500}}});
+}
+function examStart(){
+ if(submitted)return;
+ build();active=true;ended=false;locked=false;
+ const reload=answers.__active==="1";
+ answers.__active="1";save();
+ document.body.classList.add("gd-on");$("gdBadge").style.display="block";updBadge();
+ hookDialogs();keepAwake();enterFs();
+ if(!pushed){try{history.pushState(null,"",location.href);pushed=true}catch(e){}}
+ ignoreUntil=Date.now()+1500;
+ if(reload)violate("halaman ditutup atau dimuat ulang",true);
+}
+function examEnd(){
+ if(!active)return;active=false;
+ answers.__active="0";save();
+ document.body.classList.remove("gd-on");
+ const b=$("gdBadge");if(b)b.style.display="none";
+ try{if(isFs())(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch(e){}
+ try{navigator.keyboard&&navigator.keyboard.unlock&&navigator.keyboard.unlock()}catch(e){}
+ try{if(wl){wl.release();wl=null}}catch(e){}
+ try{if(vid)vid.pause()}catch(e){}
+}
+function onFs(){
+ if(!active)return;
+ if(isFs()){wasFs=true;return}
+ if(!wasFs)return;
+ violate("keluar dari layar penuh");
+}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)violate("berpindah tab atau aplikasi");else if(active&&!submitted)keepAwake()});
+window.addEventListener("blur",()=>{setTimeout(()=>{if(!document.hasFocus())violate("jendela ujian kehilangan fokus")},400)});
+document.addEventListener("fullscreenchange",onFs);
+document.addEventListener("webkitfullscreenchange",onFs);
+window.addEventListener("beforeunload",e=>{if(active&&!submitted){e.preventDefault();e.returnValue="";return ""}});
+window.addEventListener("popstate",()=>{if(active&&!submitted){try{history.pushState(null,"",location.href)}catch(e){}}});
+["contextmenu","copy","cut","paste","dragstart","selectstart"].forEach(ev=>document.addEventListener(ev,e=>{
+ if(!active||submitted)return;const t=e.target&&e.target.tagName;if(t==="INPUT"||t==="TEXTAREA"||t==="SELECT")return;e.preventDefault()},true));
+document.addEventListener("keydown",e=>{
+ if(!active||submitted)return;const k=(e.key||"").toLowerCase(),c=e.ctrlKey||e.metaKey;
+ if(k==="f12"||(c&&e.shiftKey&&["i","j","c"].indexOf(k)>=0)||(c&&["u","s","p"].indexOf(k)>=0)){e.preventDefault();e.stopPropagation()}},true);
+document.addEventListener("keyup",e=>{if(active&&!submitted&&e.key==="PrintScreen"){try{navigator.clipboard.writeText("")}catch(x){}violate("tombol PrintScreen")}});
+let rz=null;
+window.addEventListener("resize",()=>{if(!active||submitted||!isIOS)return;clearTimeout(rz);rz=setTimeout(()=>{const m=Math.min(screen.width,screen.height);if(window.innerWidth<m*0.8)violate("ukuran jendela berubah (split view atau slide over)")},800)});
+if(isIOS){try{const r=document.querySelector(".rules");if(r&&r.insertAdjacentElement){const d=document.createElement("div");d.className="gd-ios";d.innerHTML="<b>Pengguna iPhone/iPad, lakukan sebelum mulai:</b><br>1. Pengaturan &gt; Layar &amp; Kecerahan &gt; Kunci Otomatis &gt; <b>Tidak Pernah</b> (agar layar tidak mati dan dihitung pelanggaran).<br>2. Aktifkan <b>Akses Berpemandu</b> (Pengaturan &gt; Aksesibilitas), lalu tekan tombol samping 3 kali setelah ujian dimulai.<br>3. Jika ujian dibuka lewat tautan web: Bagikan &gt; <b>Tambah ke Layar Utama</b>, lalu buka dari ikon agar tampil penuh.";r.insertAdjacentElement("afterend",d)}}catch(e){}}
+document.addEventListener("click",()=>{if(active&&!locked&&!submitted&&fsSupported&&!isFs())enterFs()},true);
+login=function(){_login.apply(this,arguments);if(student&&student.name&&!submitted)examStart()};
+submitAll=async function(){await _submit.apply(this,arguments);if(submitted&&active)examEnd()};
+})();
 
 </script></body></html>
